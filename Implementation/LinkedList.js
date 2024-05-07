@@ -14,6 +14,7 @@ class LinkedList {
   constructor(head = null) {
     this.head = head;
   }
+  // traverse the linked list and pretty print the data
   traverse() {
     let currentNode = this.head;
     let string = "";
@@ -23,6 +24,7 @@ class LinkedList {
     }
     console.log(string + "null");
   }
+  // searching in the linked list, return true or false
   search(value) {
     let currentNode = this.head;
     while (currentNode) {
@@ -33,6 +35,7 @@ class LinkedList {
     }
     return false;
   }
+  //insertion at given position or end
   insert(value, position = null) {
     if (position === 0) {
       this.head = new Node(value, this.head);
@@ -58,6 +61,7 @@ class LinkedList {
       previousNode.next = new Node(value, currentNode);
     }
   }
+  // deletion at any position
   delete(value) {
     if (this.head && this.head.data === value) {
       this.head = this.head.next;
@@ -87,15 +91,19 @@ node4.next = node5;
 
 const linkedList = new LinkedList(node1);
 
-linkedList.traverse();
-console.log(linkedList.search(4));
-console.log(linkedList.search(7));
+linkedList.traverse(); // [1] -> [2] -> [4] -> [5] -> null
+console.log(linkedList.search(4)); // true
+console.log(linkedList.search(7)); // false
+//insertion at end
 linkedList.insert(7);
 linkedList.traverse();
+//insertion at start
 linkedList.insert(0, 0);
 linkedList.traverse();
+//insertion at any given position
 linkedList.insert(3, 3);
 linkedList.traverse();
+//deletion
 linkedList.delete(0);
 linkedList.traverse();
 linkedList.delete(6);
