@@ -1,6 +1,6 @@
-/* -------------------------------------------------------------------------- */
-/*               Singly LinkedList Implementation in Javascript               */
-/* -------------------------------------------------------------------------- */
+/* ------------------------------------------------------- */
+/*      Singly LinkedList Implementation in Javascript     */
+/* ------------------------------------------------------- */
 
 /* --- create a class Node which stores data and pointer to the next node --- */
 class Node {
