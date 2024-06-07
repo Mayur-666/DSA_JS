@@ -68,7 +68,7 @@ class LinkedList {
       return;
     } else {
       let currentNode = this.head;
-      while (currentNode) {
+      while (currentNode && currentNode.next) {
         if (currentNode.next.data === value) {
           currentNode.next = currentNode.next.next;
           return;
@@ -80,19 +80,19 @@ class LinkedList {
 }
 
 const node1 = new Node(1);
-const node2 = new Node(2);
-const node3 = new Node(4);
-const node4 = new Node(5);
-const node5 = new Node(6);
-node1.next = node2;
-node2.next = node3;
-node3.next = node4;
-node4.next = node5;
+// const node2 = new Node(2);
+// const node3 = new Node(4);
+// const node4 = new Node(5);
+// const node5 = new Node(6);
+// node1.next = node2;
+// node2.next = node3;
+// node3.next = node4;
+// node4.next = node5;
 
 const linkedList = new LinkedList(node1);
 
 linkedList.traverse(); // [1] -> [2] -> [4] -> [5] -> null
-console.log(linkedList.search(4)); // true
+console.log(linkedList.search(1)); // true
 console.log(linkedList.search(7)); // false
 //insertion at end
 linkedList.insert(7);
